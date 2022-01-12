@@ -1,24 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div>
+      <header>
+        <h1>Cute Dog Images</h1>
       </header>
+      <main>
+        <section>
+          <figure>
+            <img
+              src='https://images.dog.ceo/breeds/shiba/shiba-8.jpg'
+              alt='cute dog sample'
+            />
+          </figure>
+        </section>
+      </main>
+      <footer>
+        <p>Dog images are retrieved from Dog API</p>
+        <p>
+          <a href='https://dog.ceo/dog-api/about'>Donate to Dog API</a>
+        </p>
+      </footer>
     </div>
   );
 }
