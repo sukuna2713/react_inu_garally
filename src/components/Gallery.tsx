@@ -1,12 +1,26 @@
 import Image from "./Image"
+import Loading from "./Loading"
 
-const Gallery = () => {
+type Props = {
+    urls: string[]
+}
+
+const Gallery = (prop: Props) => {
+    //urlsがnullであればロード画面を表示
     return (
-        <div className="columns is-vcentered is-multiline">
-            <div className="column is-3">
-                <Image />
+        prop.urls === null ? (
+            <Loading />
+        ) : (
+            <div className="columns is-vcentered is-multiline">
+                {prop.urls.map((url) => {
+                    return (
+                        <div key={url} className="column is-3">
+                            <Image src={url} />
+                        </div>
+                    )
+                })}
             </div>
-        </div>
+        )
     )
 }
 
