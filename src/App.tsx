@@ -1,30 +1,18 @@
 import React from 'react';
 import './App.css';
 
+import Header from './components/Header';
+import Main from './components/Main';
+import Footer from './components/Footer';
+
 function App() {
   return (
     <div>
-      <header>
-        <h1>Cute Dog Images</h1>
-      </header>
-      <main>
-        <section>
-          <figure>
-            <img
-              src='https://images.dog.ceo/breeds/shiba/shiba-8.jpg'
-              alt='cute dog sample'
-            />
-          </figure>
-        </section>
-      </main>
-      <footer>
-        <p>Dog images are retrieved from Dog API</p>
-        <p>
-          <a href='https://dog.ceo/dog-api/about'>Donate to Dog API</a>
-        </p>
-      </footer>
+      <Header />
+      <Main />
+      <Footer />
     </div>
-  );
+  )
 }
 
 export default App;
