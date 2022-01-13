@@ -4,8 +4,18 @@ type Props = {
     onFormSubmit: (breed: string) => void
 }
 
+type Breed = {
+    id: string;
+    name: string;
+}
+
 const Form = (props: Props) => {
-    const [breed, setBreed] = useState('shiba')
+    const breeds: Breed[] = [
+        { id: 'shiba', name: '柴犬' },
+        { id: 'akita', name: '秋田犬' },
+        { id: 'husky', name: 'ハスキー' },
+    ]
+    const [breed, setBreed] = useState(breeds[0].id)
 
     const handleOnChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         event.preventDefault()
@@ -24,8 +34,7 @@ const Form = (props: Props) => {
                     <div className="control is-expanded">
                         <div className="select is-fullwidth">
                             <select name="breed" defaultValue="shiba" onChange={handleOnChange}>
-                                <option value="shiba">Shiba</option>
-                                <option value="akita">Akita</option>
+                                {breeds.map((e) => (<option value={e.id}>{e.name}</option>))}
                             </select>
                         </div>
                     </div>
